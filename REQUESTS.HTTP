@@ -1,0 +1,195 @@
+REQUESTS.HTTP CODE FOR MAKE THE REQUESTS FO PERFROMING CRUD OPERATIONS
+
+
+POST http://localhost:3000/api/trades
+Content-Type: application/json
+
+{
+    "schemaVersion": "1.0.0",
+    "pairs": [
+        {
+            "chainId": "injective",
+            "dexId": "dojoswap",
+            "url": "https://dexscreener.com/injective/inj17ufy5gqw33t0prwhkwa6ensv0jpj3xfvylgx8j",
+            "pairAddress": "inj17ufy5gqw33t0prwhkwa6ensv0jpj3xfvylgx8j",
+            "baseToken": {
+                "address": "inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw",
+                "name": "Baby DOJO Token",
+                "symbol": "babyDOJO"
+            },
+            "quoteToken": {
+                "address": "inj1zdj9kqnknztl2xclm5ssv25yre09f8908d4923",
+                "name": "Dojo Token",
+                "symbol": "DOJO"
+            },
+            "priceNative": "0.006623",
+            "priceUsd": "0.004145",
+            "txns": {
+                "m5": {
+                    "buys": 0,
+                    "sells": 1
+                },
+                "h1": {
+                    "buys": 1,
+                    "sells": 19
+                },
+                "h6": {
+                    "buys": 5,
+                    "sells": 154
+                },
+                "h24": {
+                    "buys": 8,
+                    "sells": 604
+                }
+            },
+            "volume": {
+                "h24": 284651.74,
+                "h6": 86598.28,
+                "h1": 21370.52,
+                "m5": 4.78
+            },
+            "priceChange": {
+                "m5": 0.42,
+                "h1": -8.45,
+                "h6": -2.03,
+                "h24": -1.44
+            },
+            "liquidity": {
+                "usd": 832547.86,
+                "base": 98672321,
+                "quote": 676716
+            },
+            "pairCreatedAt": 1710685033000,
+            "info": {
+                "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/injective/inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw.png",
+                "websites": [
+                    {
+                        "label": "Website",
+                        "url": "https://baby.dojo.trading/"
+                    },
+                    {
+                        "label": "Docs",
+                        "url": "https://docs.dojo.trading/"
+                    },
+                    {
+                        "label": "Main Site",
+                        "url": "https://dojo.trading/"
+                    }
+                ],
+                "socials": [
+                    {
+                        "type": "twitter",
+                        "url": "https://twitter.com/Dojo_Swap"
+                    },
+                    {
+                        "type": "telegram",
+                        "url": "https://t.me/dojo_swap"
+                    }
+                ]
+            }
+        },
+        {
+            "chainId": "injective",
+            "dexId": "dojoswap",
+            "url": "https://dexscreener.com/injective/inj19ucgk3rghfwu9an5vdl3kxf02h8cguk50042ff",
+            "pairAddress": "inj19ucgk3rghfwu9an5vdl3kxf02h8cguk50042ff",
+            "baseToken": {
+                "address": "inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw",
+                "name": "Baby DOJO Token",
+                "symbol": "babyDOJO"
+            },
+            "quoteToken": {
+                "address": "inj",
+                "name": "Injective",
+                "symbol": "INJ"
+            },
+            "priceNative": "0.0001300",
+            "priceUsd": "0.004829",
+            "txns": {
+                "m5": {
+                    "buys": 0,
+                    "sells": 0
+                },
+                "h1": {
+                    "buys": 0,
+                    "sells": 2
+                },
+                "h6": {
+                    "buys": 0,
+                    "sells": 8
+                },
+                "h24": {
+                    "buys": 0,
+                    "sells": 36
+                }
+            },
+            "volume": {
+                "h24": 1024.48,
+                "h6": 238.99,
+                "h1": 48.03,
+                "m5": 0
+            },
+            "priceChange": {
+                "m5": 0,
+                "h1": 1.42,
+                "h6": 34.62,
+                "h24": 6.73
+            },
+            "liquidity": {
+                "usd": 599.28,
+                "base": 65538,
+                "quote": 7.6163
+            },
+            "pairCreatedAt": 1710163106000,
+            "info": {
+                "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/injective/inj19dtllzcquads0hu3ykda9m58llupksqwekkfnw.png",
+                "websites": [
+                    {
+                        "label": "Website",
+                        "url": "https://baby.dojo.trading/"
+                    },
+                    {
+                        "label": "Docs",
+                        "url": "https://docs.dojo.trading/"
+                    },
+                    {
+                        "label": "Main Site",
+                        "url": "https://dojo.trading/"
+                    }
+                ],
+                "socials": [
+                    {
+                        "type": "twitter",
+                        "url": "https://twitter.com/Dojo_Swap"
+                    },
+                    {
+                        "type": "telegram",
+                        "url": "https://t.me/dojo_swap"
+                    }
+                ]
+            }
+        }
+    ]
+}
+//read all trades
+###
+GET http://localhost:3000/api/trades
+
+//read trade by id
+###
+GET http://localhost:3000/api/trades/65fc725213c5b1ba19503469
+//update trade by id
+###
+PUT http://localhost:3000/api/trades/65fc725213c5b1ba19503469
+Content-Type: application/json
+
+{
+  "priceUsd": "0.004999"
+}
+
+
+//delete trade by id
+###
+DELETE http://localhost:3000/api/trades/65fc725213c5b1ba19503469
+
+
